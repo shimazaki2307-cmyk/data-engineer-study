@@ -8,10 +8,24 @@ if age >=18:
     print("adult")
 for i in range(5):
     print(i)
+
 fruits =["apple","banana","orange"]
 print(fruits)
 print(fruits[0])
 print(fruits[1])
 for fruits in fruits:
     print(fruits)
-    
+
+def greet():
+    print("hello")
+greet()
+
+def greet(name):
+    print("hello " + name)
+greet ("akira")
+
+def add(a,b):
+    return a + b
+result = add(3,5)
+
+print(result)
