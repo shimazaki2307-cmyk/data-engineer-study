@@ -29,3 +29,14 @@ def add(a,b):
 result = add(3,5)
 
 print(result)
+
+file = open("sample.txt","r")
+
+text = file.read()
+print(text)
+file.close()
+
+file = open("sample.txt","r")
+for line in file:
+    print(line)
+file.close()
