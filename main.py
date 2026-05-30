@@ -40,3 +40,20 @@ file = open("sample.txt","r")
 for line in file:
     print(line)
 file.close()
+
+file = open("sample.csv","r")
+
+for line in file:
+    print(line)
+
+file.close()
+
+file = open("sample.csv","r")
+
+for line in file:
+    row = line.strip()
+    print(row)
+
+file.close()
+
+
