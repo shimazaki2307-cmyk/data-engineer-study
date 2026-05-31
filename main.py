@@ -56,4 +56,12 @@ for line in file:
 
 file.close()
 
+file = open("sample.csv","r")
+
+for line in file:
+    row = line.strip().split(",")
+    print("名前:",row[0],"年齢:",row[1])
+
+file.close()
+
 
