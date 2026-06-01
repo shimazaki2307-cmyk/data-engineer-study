@@ -64,4 +64,18 @@ for line in file:
 
 file.close()
 
+file = open("sample.csv","r")
+
+for line in file:
+    row = line.strip().split(",")
+    
+    if row[0] == "name":
+        continue
+    age = int(row[1])
+
+    if age >= 30:
+        print(row[0],age)
+
+file.close()
+
 
