@@ -78,4 +78,25 @@ for line in file:
 
 file.close()
 
+file = open("sample.csv","r")
+
+total_age = 0
+count = 0
+
+for line in file:
+    row = line.strip().split(",")
+
+    if row[0] == "name":
+        continue
+
+    age = int(row[1])
+
+    total_age = total_age + age
+    count += 1
+
+print("合計年齢：",total_age)
+print("平均年齢：",total_age / count)
+
+file.close()
+
 
