@@ -5,9 +5,9 @@ conn = sqlite3.connect("sample.db")
 cursor = conn.cursor()
 
 for row in cursor.execute("""
-SELECT *
+SELECT COUNT(*)
 FROM people
-WHERE age >= 25
+WHERE age >= 30
 """):
     print(row)
 
