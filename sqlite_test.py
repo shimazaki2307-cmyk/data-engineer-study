@@ -4,11 +4,13 @@ conn = sqlite3.connect("sample.db")
 
 cursor = conn.cursor()
 
-for row in cursor.execute("""
-SELECT COUNT(*)
+cursor.execute("""
+SELECT AVG(age)
 FROM people
-WHERE age >= 30
-"""):
-    print(row)
+""")
+
+result = cursor.fetchone()
+
+print("平均年齢：",result[0])
 
 conn.close()
