@@ -1,24 +1,20 @@
 import sqlite3
 
-conn = sqlite3.connect("sample.db")
+def get_average_age():
+    conn = sqlite3.connect("sample.db")
+    cursor = conn.cursor()
 
-cursor = conn.cursor()
+    cursor.execute("""
+    SELECT AVG(age)
+    FROM people
+    """)
 
-cursor.execute("""
-SELECT AVG(age)
-FROM people
-""")
+    result = cursor.fetchone()[0]
 
-result = cursor.fetchone()
+    conn.close()
 
-average_age = result[0]
+    return result
+
+average_age = get_average_age()
 
 print("平均年齢：",average_age)
-
-if average_age >= 30:
-    print("平均年齢は３０歳以上です。")
-
-else:
-    print("平均年齢は３０歳未満です。")
-
-conn.close()
